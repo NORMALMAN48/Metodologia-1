@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Login demo</title>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
 <body>
+  <div id="g_id_onload"
+       data-client_id="730235672713-d6ipuc7b8pek3u122ajsn19ffb1smj89.apps.googleusercontent.com"
+       data-callback="handleCredential"></div>
+  <div class="g_id_signin" data-type="standard"></div>
 
-<h1>My First Heading is the best of the best!</h1>
-<p>My first paragraph.</p>
+  <p id="greeting"></p>
 
+  <script>
+    function handleCredential(response) {
+      // response.credential is a JWT containing name, email, picture
+      const payload = JSON.parse(atob(response.credential.split('.')[1]));
+      document.getElementById('greeting').textContent = 'Hello, ' + payload.name;
+    }
+  </script>
 </body>
 </html>

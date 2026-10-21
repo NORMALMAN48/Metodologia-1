@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Login demo</title>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="titleLogin">
-  <h1> InnovaApps SA de CV.</h1>
-  <h3> Metodologia 1</h3>
-  <h3> Welcome to our page!</h3>
-  <p> Login:</p>
+  <div class="card">
+    <div class="titleLogin">
+      <h1>InnovaApps SA de CV.</h1>
+      <h3>Metodologia 1</h3>
+      <h3>Welcome to our page!</h3>
+      <p>Login:</p>
+    </div>
+
+    <div id="g_id_onload"
+         data-client_id="730235672713-d6ipuc7b8pek3u122ajsn19ffb1smj89.apps.googleusercontent.com"
+         data-callback="handleCredential"></div>
+    <div class="g_id_signin" data-type="standard"></div>
+
+    <p id="greeting"></p>
   </div>
-
-
-  <div id="g_id_onload"
-       data-client_id="730235672713-d6ipuc7b8pek3u122ajsn19ffb1smj89.apps.googleusercontent.com"
-       data-callback="handleCredential"></div>
-  <div class="g_id_signin" data-type="standard"></div>
-
-
-  
-  <p id="greeting"></p>
 
   <script>
     function handleCredential(response) {
